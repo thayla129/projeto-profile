@@ -8,6 +8,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.Email
+import androidx.compose.material.icons.outlined.Phone
+import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -73,29 +76,47 @@ fun ProfileScreen() {
         // Informações (ajustadas para corresponder à imagem)
         Column(modifier = Modifier.padding(24.dp)) {
             // Email section
-            Column {
-                Text(text = "Email", fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text("Official", fontSize = 14.sp, color = Color.Gray)
-                Text("michael.mitc@example.com", fontSize = 14.sp)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text("Personal", fontSize = 14.sp, color = Color.Gray)
-                Text("michael@example.com", fontSize = 14.sp)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Outlined.Email,
+                    contentDescription = "Email",
+                    tint = Color(0xFF5E17EB), // Cor roxa
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Column {
+                    Text(text = "Email", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("Official", fontSize = 14.sp, color = Color.Gray)
+                    Text("michael.mitc@example.com", fontSize = 14.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("Personal", fontSize = 14.sp, color = Color.Gray)
+                    Text("michael@example.com", fontSize = 14.sp)
+                }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
             // Phone number section
-            Column {
-                Text(text = "Phone number", fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                Spacer(modifier = Modifier.height(8.dp))
-                Text("Mobile", fontSize = 14.sp, color = Color.Gray)
-                Text("(209) 555-0104", fontSize = 14.sp)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Outlined.Phone,
+                    contentDescription = "Phone",
+                    tint = Color(0xFF5E17EB), // Cor roxa
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Column {
+                    Text(text = "Phone number", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text("Mobile", fontSize = 14.sp, color = Color.Gray)
+                    Text("(209) 555-0104", fontSize = 14.sp)
+                }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Team section
+            // Team section (sem ícone)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -105,7 +126,11 @@ fun ProfileScreen() {
                     Text(text = "Team", fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     Text("Project Operation Team", fontSize = 14.sp)
                 }
-                Icon(Icons.Default.ArrowForward, contentDescription = null, tint = Color.Gray)
+                Icon(
+                    Icons.Default.ArrowForward,
+                    contentDescription = null,
+                    tint = Color(0xFF5E17EB) // Cor roxa
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -116,11 +141,24 @@ fun ProfileScreen() {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column {
-                    Text(text = "Leads by", fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                    Text("Darrell Steward", fontSize = 14.sp)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = Icons.Outlined.Person,
+                        contentDescription = "Leads by",
+                        tint = Color(0xFF5E17EB), // Cor roxa
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Column {
+                        Text(text = "Leads by", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                        Text("Darrell Steward", fontSize = 14.sp)
+                    }
                 }
-                Icon(Icons.Default.ArrowForward, contentDescription = null, tint = Color.Gray)
+                Icon(
+                    Icons.Default.ArrowForward,
+                    contentDescription = null,
+                    tint = Color(0xFF5E17EB) // Cor roxa
+                )
             }
         }
 
